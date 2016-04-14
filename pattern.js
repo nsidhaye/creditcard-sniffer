@@ -38,8 +38,6 @@ function RegEx() {
 
 	strPattern += ")"
 
-	// var rePattern = new RegExp(VISA_REG_EX + "|" + MASTERCARD_REG_EX + "|" + AMEX_REG_EX + "|" + DINERSCLUB_REG_EX + "|" + DISCOVER_REG_EX + "|" +JCB_REG_EX)
-
 	debug("Pattern : " + strPattern)
 
 	var regPattern = new RegExp(strPattern,'g')
@@ -47,24 +45,6 @@ function RegEx() {
 	return regPattern;
 }
 
-
-
-var testString = "s dfsdf ksd fks \nfksj4454365654654365dfssasdas\ndfgd4454-3656-5465-4365gczxd"
-
-function getResult(err, result) {
-	if (err) {
-        // Just an example. You may want to do something with the error.
-        console.error(err.stack || err.message)
-
-        // You should return in this branch, since there is no result to use
-        // later and that could cause an exception.
-        return;
-    }
-
-    // All your logic with the result.
-    // console.log("Result from handleResult: " + result)
-    return result
-}
 
 /**
  * This will actually find matches...
@@ -74,13 +54,8 @@ function getResult(err, result) {
  	var totalHits = 0
  	var foundInstances = []
 
- 	// console.log("findMatches::::::")
  	if (error) {
-        // Just an example. You may want to do something with the error.
-        console.error("Error: " + error.stack || error.message)
-
-        // You should return in this branch, since there is no result to use
-        // later and that could cause an exception.
+        console.error("Error: " + error.stack || error.message)    
         return
     }
 
@@ -97,8 +72,6 @@ function getResult(err, result) {
 
     	debug(msg)
 
-    	// console.log(msg)
-
     	totalHits++
     	foundInstances.push(myArray[0])
     	
@@ -111,9 +84,5 @@ function getResult(err, result) {
 }
 
 
-//You can call this from any function....
-// findMatches(null,RegEx(handleResult),testString)
-
 module.exports.RegEx=RegEx
 module.exports.findMatches=findMatches
-module.exports.getResult=getResult
