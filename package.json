@@ -1,0 +1,15 @@
+{
+  "name": "pci",
+  "version": "1.0.0",
+  "description": "Check credit card information in files using nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikhil Sidhaye",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "mocha": "^2.4.5"
+  }
+}
