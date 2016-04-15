@@ -5,12 +5,12 @@ Small node.js program to find out sensitive data like credit card numbers from f
 # Run test cases
 
 ````bash
-mocha test
+mocha testPattern
 ````
 or 
 
 ````bash
-mocha test.js
+mocha testPattern.js
 ````
 
 # Usage 
