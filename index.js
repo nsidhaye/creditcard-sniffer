@@ -1,6 +1,6 @@
 var pattern = require("./pattern.js")
 var fileUtil = require('./fileUtil.js')
-var log = require('debug')('myApp:index')
+var debug = require('debug')('myApp:index')
 
 
 var testString = "4454365654654365dfssasdas"
@@ -17,8 +17,8 @@ var testString1 = "s dfsdf ksd fks \nfksj4454365654654365dfssasdas\ndfgd4454-365
 
 //Dummy function for test purpose
 function processOnFileContent(fileName, content) {
-	log("File Name: " + fileName)
-	log("Contet: " + content)
+	debug("File Name: " + fileName)
+	debug("Contet: " + content)
 }
 
 // console.time('readFiles');

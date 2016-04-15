@@ -10,7 +10,7 @@
 var fs = require('fs')
 var path = require('path')
 var readline = require('readline')
-var log = require('debug')('myApp:fileUtil')
+var debug = require('debug')('myApp:fileUtil')
 
 /**
 	This function will read files from supplied directory path. And it will call function to process on that files.
@@ -38,7 +38,13 @@ function readFiles(dirName, processOnFileContent, onError) {
 }
 
 
+/*
+	This function is suitable for very large files.
+	In case of large files instead of keeping whole file in memory we will process it line by line.
 
+	Problems: 
+	1. If sensitive information is lied in mulitline format then we can not detect it as we are processing line by line.
+*/
 function readHugeFiles(dirName, processOnFileLine, onError) {
 	fs.readdir(dirName, function(err, fileNames) {
 		if(err) {
@@ -57,7 +63,7 @@ function readHugeFiles(dirName, processOnFileLine, onError) {
 			}) 	
 
 			lineReader.on('close', function() {
-				log("File " + filePath + " encounter file close operation")
+				debug("File " + filePath + " encounter file close operation")
 			})
 		})
 	})	
